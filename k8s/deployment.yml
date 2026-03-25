@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: movietktbooking-devops-app
+  labels:
+    app: movietktbooking
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: movietktbooking
+  template:
+    metadata:
+      labels:
+        app: movietktbooking
+    spec:
+      containers:
+      - name: movietktbooking-container
+        image: srinivasu56/movietktbooking:latest   # Jenkins will update this tag
+        ports:
+        - containerPort: 80
