@@ -18,4 +18,4 @@ spec:
       - name: movietktbooking-container
         image: srinivasu56/movietktbooking:latest   # Jenkins will update this tag
         ports:
-        - containerPort: 80
+        - containerPort: 8080
