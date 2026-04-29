@@ -2,8 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_HUB   = 'docker-cred'
-        DOCKER_USER     = "srinivasu56"
+        DOCKER_HUB   = 'srinivasu56'
         IMAGE_NAME   = 'train-ticket-app'
         IMAGE_TAG    = 'latest'
         CONTAINER_NAME = 'train-ticket-app-container'
