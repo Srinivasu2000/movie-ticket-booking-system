@@ -60,7 +60,7 @@ pipeline {
                 // Stop and remove previous container if exists
                 sh """
                     docker rm -f ${CONTAINER_NAME} || true
-                    docker run -d --name ${CONTAINER_NAME} -p 8081:8080 ${DOCKER_HUB}/${IMAGE_NAME}:${IMAGE_TAG}
+                    docker run -d --name ${CONTAINER_NAME} -p 8081:80 ${DOCKER_HUB}/${IMAGE_NAME}:${IMAGE_TAG}
                 """
             }
         }
