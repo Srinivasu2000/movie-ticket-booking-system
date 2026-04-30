@@ -1,17 +1,10 @@
-# -------- Stage 1: Build --------
-FROM maven:latest AS builder
 
-WORKDIR /app
-COPY . .
-RUN mvn clean package -DskipTests
+FROM tomcat:latest
 
+RUN rm -rf /usr/local/tomcat/webapps/*
 
-# -------- Stage 2: Run --------
-FROM eclipse-temurin:21-jdk-jammy
-
-WORKDIR /app
-COPY --from=builder /app/target/*.jar app.jar
+COPY target/*.war /usr/local/tomcat/webapps/ROOT.war
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+CMD ["catalina.sh", "run"]
