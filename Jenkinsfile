@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKER_HUB   = 'srinivasu56'
         IMAGE_NAME   = 'train-ticket-app'
-        IMAGE_TAG    = '3.9.9-eclipse-temurin-21'
+        IMAGE_TAG    = 'latest'
         CONTAINER_NAME = 'train-ticket-app-container'
     }
 
