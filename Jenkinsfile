@@ -12,7 +12,7 @@ pipeline {
 
         stage('Clean Workspace') {
             steps {
-                cleanWs()
+               sh 'mvn clean package'
             }
         }
 
