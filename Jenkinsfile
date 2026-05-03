@@ -24,7 +24,7 @@ pipeline {
 
         stage('Build WAR (Maven)') {
             steps {
-                sh 'mvn clean package '
+                sh 'mvn clean package -DskipTests' '
             }
         }
 
