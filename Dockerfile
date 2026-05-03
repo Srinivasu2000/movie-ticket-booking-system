@@ -1,10 +1,9 @@
+FROM openjdk:21-jdk-slim
 
-FROM tomcat:latest
+WORKDIR /app
 
-RUN rm -rf /usr/local/tomcat/webapps/*
-
-COPY target/*.jar /usr/local/tomcat/webapps/ROOT.jar
+COPY target/*.jar app.jar
 
 EXPOSE 8080
 
-CMD ["catalina.sh", "run"]
+ENTRYPOINT ["java","-jar","app.jar"]
