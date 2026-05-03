@@ -12,7 +12,7 @@ pipeline {
 
         stage('Clean Workspace') {
             steps {
-               sh 'mvn clean package'
+               cleanWs()
             }
         }
 
@@ -24,7 +24,7 @@ pipeline {
 
         stage('Build WAR (Maven)') {
             steps {
-                sh 'mvn clean package -DskipTests'
+                sh 'mvn clean package '
             }
         }
 
